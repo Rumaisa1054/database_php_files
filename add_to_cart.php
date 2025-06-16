@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Check if the request method is PO
         $fetchPrice = $fetchProduct['price']; // Get product price
 
         // Insert the product into the cart
-        $insertToCart = "INSERT INTO cart VALUE ('', '$id_user', '$id_product', 1, '$fetchPrice', NOW())";
+        $insertToCart = "INSERT INTO cart VALUES (NULL, '$id_user', '$id_product', 1, '$fetchPrice', NOW())";
 
         if (mysqli_query($connection, $insertToCart)) { // If insertion is successful
             $response['value'] = 1;
