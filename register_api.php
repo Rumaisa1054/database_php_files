@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $response['message'] = "Oops, Sory data has been registered !";
         echo json_encode($response);
     } else {
-        $query_insert_user = mysqli_query($connection, "INSERT INTO user VALUE('', '$full_name', '$email', '$phone', '$address', '$password', NOW(), 1)");
+        $query_insert_user = mysqli_query($connection, "INSERT INTO user VALUE(NULL, '$full_name', '$email', '$phone', '$address', '$password', NOW(), 1)");
         if ($query_insert_user) {
             # code...
             $response['value'] = 1;
