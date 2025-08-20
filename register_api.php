@@ -11,10 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $address = $_POST['address'];
     $password = md5($_POST['password']);
 
-    $query_cek_user = mysqli_query($connection, "SELECT * FROM user WHERE email = '$email' || phone = '$phone'");
-    $cek_user_result = mysqli_fetch_array($query_cek_user);
+    $query_check_user = mysqli_query($connection, "SELECT * FROM user WHERE email = '$email' || phone = '$phone'");
+    $check_user_result = mysqli_fetch_array($query_check_user);
 
-    if ($cek_user_result) {
+    if ($check_user_result) {
         # code...
         $response['value'] = 0;
         $response['message'] = "Oops, Sory data has been registered !";
