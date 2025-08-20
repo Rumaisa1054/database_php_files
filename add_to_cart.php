@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Check if the request method is PO
     $id_product = $_POST['id_product']; // Get product ID from the POST request
 
     // Check if the product is already in the cart
-    $cekCart = mysqli_query($connection, "SELECT * FROM cart WHERE id_device= '$id_user' AND id_product = '$id_product'");
-    $resultCekCart = mysqli_fetch_array($cekCart);
+    $checkCart = mysqli_query($connection, "SELECT * FROM cart WHERE id_device= '$id_user' AND id_product = '$id_product'");
+    $resultCekCart = mysqli_fetch_array($checkCart);
 
     if ($resultCekCart) { // If the product is already in the cart
         $response['value'] = 2;
@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Check if the request method is PO
         echo json_encode($response); // Return JSON response
     } else { // If the product is not in the cart
         // Fetch product details from the database
-        $cekProduct = mysqli_query($connection, "SELECT * FROM product WHERE id_product = '$id_product'");
-        $fetchProduct = mysqli_fetch_array($cekProduct);
+        $checkProduct = mysqli_query($connection, "SELECT * FROM product WHERE id_product = '$id_product'");
+        $fetchProduct = mysqli_fetch_array($checkProduct);
         $fetchPrice = $fetchProduct['price']; // Get product price
 
         // Insert the product into the cart
