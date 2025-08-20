@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     if ($result) {
         # code...
-        if ($type == "tambah") {
+        if ($type == "add") {
             # code...
-            $update_tambah = mysqli_query($connection, "UPDATE cart set quantity = quantity + 1 WHERE id_cart = '$cartID'");
-            if ($update_tambah) {
+            $update_add = mysqli_query($connection, "UPDATE cart set quantity = quantity + 1 WHERE id_cart = '$cartID'");
+            if ($update_add) {
                 # code...
                 $response['value'] = 1;
                 $response['message'] = "";
@@ -47,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                 }
             } else {
                 # code...
-                $update_kurang = mysqli_query($connection, "UPDATE cart set quantity = quantity - 1 WHERE id_cart = '$cartID'");
-                if ($update_kurang) {
+                $update_minus = mysqli_query($connection, "UPDATE cart set quantity = quantity - 1 WHERE id_cart = '$cartID'");
+                if ($update_minus) {
                     # code...
                     $response['value'] = 1;
                     $response['message'] = "";
