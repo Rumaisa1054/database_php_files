@@ -4,9 +4,9 @@
 
     $response = array();
 
-    $cek_category = mysqli_query($connection, "SELECT * FROM category_product WHERE status ='on'");
+    $check_category = mysqli_query($connection, "SELECT * FROM category_product WHERE status ='on'");
 
-    while ($row_category = mysqli_fetch_array($cek_category)) {
+    while ($row_category = mysqli_fetch_array($check_category)) {
         # code...
         $id_category = $row_category['id_category'];
         $key['idCategory'] = $id_category;
@@ -16,9 +16,9 @@
 
         $key['product'] = array();
 
-        $cek_product = mysqli_query($connection, "SELECT * FROM product WHERE id_category = '$id_category'");
+        $check_product = mysqli_query($connection, "SELECT * FROM product WHERE id_category = '$id_category'");
 
-        while ($row_product = mysqli_fetch_array($cek_product)) {
+        while ($row_product = mysqli_fetch_array($check_product)) {
             # code...
             $key['product'][] = array(
                 'id_product' => $row_product['id_product'],
