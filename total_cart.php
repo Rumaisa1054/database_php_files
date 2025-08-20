@@ -10,7 +10,7 @@ $query_select_cart = mysqli_query($connection, "SELECT COUNT(*) as tot FROM cart
 while ($row = mysqli_fetch_array($query_select_cart)) {
     # code...
 
-    $key['total'] = $row['total'];
+    $key['total'] = $row['tot'];
 
     array_push($response, $key);
 }
