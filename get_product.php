@@ -5,9 +5,9 @@ require 'config.php';
 
 $response = array();
 
-$cek_product = mysqli_query($connection, "SELECT * FROM product WHERE status ='1'");
+$check_product = mysqli_query($connection, "SELECT * FROM product WHERE status ='1'");
 
-while ($row_product = mysqli_fetch_array($cek_product)) {
+while ($row_product = mysqli_fetch_array($check_product)) {
     # code...
     $key['id_product'] = $row_product['id_product'];
     $key['id_category'] = $row_product['id_category'];
