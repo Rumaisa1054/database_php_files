@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $query_cek_user = mysqli_query($connection, "SELECT * FROM user WHERE email = '$email'");
-    $cek_user_result = mysqli_fetch_array($query_cek_user);
+    $query_check_user = mysqli_query($connection, "SELECT * FROM user WHERE email = '$email'");
+    $check_user_result = mysqli_fetch_array($query_check_user);
 
     if ($cek_user_result) {
         # code...
