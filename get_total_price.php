@@ -10,6 +10,6 @@ $query_total_price = mysqli_query($connection, "SELECT SUM(quantity*price) as To
 
 $result = mysqli_fetch_array($query_total_price);
 
-$response['Total'] = $result['Total'];
+$response['total'] = $result['Total'];
 
 echo json_encode($response);
