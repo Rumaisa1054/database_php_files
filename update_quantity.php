@@ -6,16 +6,16 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     # code...
     $response = array();
     $cartID = $_POST['cartID'];
-    $tipe = $_POST['tipe'];
+    $type = $_POST['type'];
 
-    $cek_cart = mysqli_query($connection, "SELECT * FROM cart WHERE id_cart = '$cartID'");
-    $result = mysqli_fetch_array($cek_cart);
+    $check_cart = mysqli_query($connection, "SELECT * FROM cart WHERE id_cart = '$cartID'");
+    $result = mysqli_fetch_array($check_cart);
 
     $qty = $result['quantity'];
 
     if ($result) {
         # code...
-        if ($tipe == "tambah") {
+        if ($type == "tambah") {
             # code...
             $update_tambah = mysqli_query($connection, "UPDATE cart set quantity = quantity + 1 WHERE id_cart = '$cartID'");
             if ($update_tambah) {
